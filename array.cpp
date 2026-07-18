@@ -75,21 +75,34 @@ int BinarySearch(int arr[],int n,int key){
 }
 
 //Question No.6
-void printSubArray(int arr[], int n){
-    int maxi = INT16_MIN;
+void printSubArray(int arr[],int n){
+    int max = 0;
     for(int i=0; i<n; i++){
-        int sum = 0;
-        for(int j=i; j<n; j++){
-            sum += arr[j];
+         int sum = 0;
+        for(int j=i; j<n; j++){   
+           sum += arr[j]; 
         }
-       maxi = max(sum,maxi);
+        if(sum > max){
+                max = sum;
+            }
     }
-    cout<<"maximum: "<<maxi<<endl;
+    cout<<max<<endl;
+}
+
+int kadansAlgo(int arr[], int n){
+    int sum = 0;
+    for(int i=0; i<n; i++){
+        sum += arr[i];
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return sum;
 }
 
 int main(){  
     int arr[] = {2,-3,6,-5,4,2};
     int n = 6;
-    printSubArray(arr,n);  
+    cout<<"kadan's algorithm sum: "<<kadansAlgo(arr,n)<<endl;
     return 0;
 }
