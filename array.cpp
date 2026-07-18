@@ -1,5 +1,4 @@
 #include<iostream>
-#include<math.h>
 using namespace std;
 
 //Question No.1
@@ -100,9 +99,28 @@ int kadansAlgo(int arr[], int n){
     return sum;
 }
 
+int buyAndsellStocks(int arr[], int n){
+    int bestBuy[100000];
+    bestBuy[0] = INT16_MAX;
+
+    
+    for(int i=1; i<n; i++){
+        bestBuy[i] = min(bestBuy[i-1],arr[i-1]);
+    }
+
+    int maxProfit = 0;
+
+    for(int i=0; i<n; i++){
+        int currProfit = arr[i] - bestBuy[i];
+        maxProfit = max(currProfit,maxProfit);
+    }
+
+    return maxProfit;
+}
+
 int main(){  
-    int arr[] = {2,-3,6,-5,4,2};
+    int arr[] = {7,1,5,3,6,4};
     int n = 6;
-    cout<<"kadan's algorithm sum: "<<kadansAlgo(arr,n)<<endl;
+    cout<<buyAndsellStocks(arr,n)<<endl;
     return 0;
 }
