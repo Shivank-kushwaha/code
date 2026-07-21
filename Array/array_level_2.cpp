@@ -63,6 +63,10 @@ int findLastOccurance(int arr[], int n){
 bool unique(int arr[], int n){
 }
 
+bool isUnique(int arr[], int n){
+
+}
+
 int main(){
     int arr[] = {34,23,90,87,66,23,2,1,34,23,44};
     int n = sizeof(arr) / sizeof(int);
