@@ -1,24 +1,42 @@
 #include<iostream>
 using namespace std;
 
+//stair case search from top to bottom
 int stairCase(int arr[][4], int n, int m, int key){
 
-    int start = 0;
-    int end = m-1;
+    int row = 0;
+    int col = m-1;
 
-    while(start < n && end >= 0){
+    while(row < n && col >= 0){
 
-        if(arr[start][end] == key){
-            cout<<"["<<start<<","<<end<<"]"<<endl;
-            return start;
-        } else if(key < arr[start][end]){
-            end--;
+        if(arr[row][col] == key){
+            cout<<"["<<row<<","<<col<<"]"<<col<<endl;
+            return row;
+        } else if(key < arr[row][col]){
+            col--;
         }else {
-            start ++;
+            row ++;
         }
     }
 
     return -1;
+}
+
+// stairt case search from bottom to top
+int stairCaseSearch(int arr[][4], int n, int m, int key){
+    int row = n-1;
+    int col = 0;
+
+    while(row >= 0 && col < m){
+        if(arr[row][col] == key){
+            cout<<"["<<row<<", "<<col<<"]"<<endl;
+            return row;
+        }else if(key < arr[row][col]){
+            row--;
+        } else {
+            col++;
+        }
+    }
 }
 
 int main(){
@@ -29,7 +47,7 @@ int main(){
         {32,33,39,50}
     };
 
-    int result = stairCase(arr,4,4,33);
+    int result = stairCaseSearch(arr,4,4,30);
     if(result == -1){
         cout<<"Element Not found"<<endl;
     }
