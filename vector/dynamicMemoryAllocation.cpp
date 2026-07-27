@@ -1,17 +1,17 @@
 #include<iostream>
 using namespace std;
 
-int main(){
-    int *ptr = new int[10];
-
-    int x = 1;
-
-    for(int i=0; i<10; i++){
-        ptr[i] = x;
-        cout<<ptr[i]<<" ";
-        x++;
-    }
-
+void funcInt(){
+    int *ptr = new int;
     
+    *ptr = 78;
+
+    cout<<*ptr<<endl;
+
+    delete ptr;
+}
+
+int main(){
+    funcInt();
     return 0;
 }
