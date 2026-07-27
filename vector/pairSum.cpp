@@ -22,12 +22,14 @@ vector<int>pairsum(vector<int> vec, int target){
     }
 
     ans.push_back(-1);
+    ans.push_back(-1);
+
     return ans;
 }
 
 int main(){
     vector<int> vec = {2,7,9,11,15};
-    int target = 90;
+    int target = 26;
 
     vector<int> ans = pairsum(vec,target);
     
