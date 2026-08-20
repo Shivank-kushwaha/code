@@ -18,8 +18,29 @@ int countWays(int n){
     return dp[n];
 }
 
+// Memoizaton DP
+
+int countWaysWithMemoization(int n, vector<int> &dp){
+    if(n == 0 || n == 1){
+        return 1;
+    }
+
+    if(n == 2){
+        return 2;
+    }
+
+    if(dp[n] != -1){
+        return dp[n];
+    }
+
+    dp[n] = countWaysWithMemoization(n-1,dp) + countWaysWithMemoization(n-2,dp) + countWaysWithMemoization(n-3,dp);
+
+    return dp[n];
+}
+
 int main(){
-    int n = 4;
-    cout<<"Total Ways: "<<countWays(n)<<endl;
+    int n = 3;
+    vector<int>dp(n+1,-1);
+    cout<<"Total Ways: "<<countWaysWithMemoization(n,dp)<<endl;
     return 0;
 }
