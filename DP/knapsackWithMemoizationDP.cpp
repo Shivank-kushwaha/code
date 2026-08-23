@@ -41,5 +41,12 @@ int main(){
 
     cout<<"maximum profit: "<<maxProfitMem(val,wt,w,n,dp)<<endl;
 
+    for(int i=0; i<=n; i++){
+        for(int j=0; j<=w; j++){
+            cout<<dp[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
     return 0;
 }
