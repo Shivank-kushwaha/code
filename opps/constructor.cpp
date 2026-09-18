@@ -7,9 +7,9 @@ class Car{
 
     public:
 
-    Car(){
-        this->name = "Rolls royes";
-        this->color = "black";
+    Car(string name, string color){
+        this->name = name;
+        this->color = color;
         carColor();
         carName();
         cout<<"constructor invoked automatically at time of object creation"<<endl;
@@ -30,9 +30,14 @@ class Car{
     void carName(){
         cout<<this->name<<endl;
     }
+
+    string getName(){
+        return name;
+    }
 };
 
 int main(){
-    Car c1;
+    Car c1("rolls roys","black");
+    cout<<"car Name: "<<c1.getName()<<endl;
     return 0;
 }
