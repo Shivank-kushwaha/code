@@ -14,6 +14,12 @@ class Car{
         this->color = color;
     }
 
+    Car(Car &original){
+        cout<<"custom copy"<<endl;
+        model = original.model;
+        name = original.name;
+        color = original.color;
+    }
     void print(){
         cout<<"model: "<<this->model<<endl;
         cout<<"name: "<<this->name<<endl;
