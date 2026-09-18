@@ -2,11 +2,19 @@
 using namespace std;
 
 class Student{
-    public:
+    
     string name;
     float cgpa;
+    
+    public:
+
+    void values(string name, float cgpa){
+        this->name = name;
+        this->cgpa = cgpa;
+    }
 
     void calculateCgpa(){
+        cout<<"name is: "<<this->name<<endl;
         cout<<cgpa * 10<<endl;
     }
 };
@@ -27,8 +35,7 @@ class User{
 };
 int main(){
     Student s1;
-    s1.name = "shivank";
-    s1.cgpa = 9.8;
+    s1.values("alex",9.6);
     s1.calculateCgpa();
 
     User u1;
